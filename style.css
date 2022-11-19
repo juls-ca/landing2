@@ -1,0 +1,52 @@
+/*STYLESHEET FOR LANDING PAGE 2 PROJECT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #eee;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #000083;
+    background-color: #FDCC0C;
+}
+header {
+    height: 80px;
+    display: flex;
+    background-color: #FDCC0C;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+header ul {
+    display: flex;
+    list-style-type: none;
+}
+header li {
+    background-color: #FDCC0C;
+}
+ul li a {
+    background-color: #FDCC0C;
+    color: #000083;
+    text-decoration: none;
+    padding: 0 20px;
+    display: inline-block;
+    font-weight: bolder;
+}
+
+/*NAV LINKS HOVER EFFECTS*/
+li a::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 0;
+    background: #000083;
+    transition: all .5s;
+}
+
+li a:hover::after {
+    width: 100%;
+}
