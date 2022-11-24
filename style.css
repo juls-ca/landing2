@@ -27,6 +27,7 @@ header ul {
 }
 header li {
     background-color: #FDCC0C;
+
 }
 ul li a {
     background-color: #FDCC0C;
@@ -35,6 +36,7 @@ ul li a {
     padding: 0 20px;
     display: inline-block;
     font-weight: bolder;
+
 }
 
 /*NAV LINKS HOVER EFFECTS*/
@@ -67,6 +69,7 @@ li a:hover::after {
     flex-direction: column;
     border: 2px solid black;
     text-align: right;
+    position: relative;
 }
 .hero-left h1 {
     font-family: 'Coiny', cursive;
@@ -82,6 +85,7 @@ li a:hover::after {
     width: 500px;
     flex: 0 1 auto;
     overflow: auto;
+    position: relative;
 }
 
 /*ABOUT SECTION*/
@@ -98,6 +102,7 @@ li a:hover::after {
 .about-text {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .about h2 {
     color: #af2413;
@@ -107,70 +112,68 @@ li a:hover::after {
     max-width: 400px;
 }
 
-/*ABOUT SECTION: IMAGE SLIDER*/
-.carousel {
+/*ABOUT SECTION: IMAGE CAROUSEL*/
+.slide-vp {
     max-width: 400px;
-    max-height: 600px;
-}
-.carousel-inner {
-    position: relative;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column; /*aligns slide and bullets vertically*/
+    justify-content: center;
+    align-content: center;
+}
+.slides {
+    display: flex; /*slide images are horizontally aligned inside viewport*/
+    overflow-x: auto;
     border-radius: 50px;
-
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
-
-.carousel-open:checked + .carousel-item {
-    position: static;
-    opacity: 100;
+.slides::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
 }
-
-.carousel-item {
+.slides > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 400px;
+    height: 500px;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+}
+.slides img {
+    object-fit: cover;
     position: absolute;
-    opacity: 0;
-    -webkit-transition: opacity 0.6s ease-out;
-    transition: opacity 0.6s ease-out;
-}
-
-.carousel-item img {
-    height: 100%;
     width: 100%;
+    height: 100%;
 }
-
-.carousel-indicators {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.slide-links {
+    padding-top: 10px;
+    background-color: #fafafa;
     text-align: center;
-    z-index: 1; /*stacks bullets on top of img*/
-
 }
-
-.carousel-indicators li {
-    display: inline-block;
-
+.slide-links > a {
+    display: inline-flex;
+    width: 15px;
+    height: 15px;
+    background: #FDCC0C;
+    text-decoration: none;
+    border-radius: 50%;
+    position: relative;
 }
-
-.carousel-bullet {
-    color: #af2413;
-    cursor: pointer;
-    font-size: 35px;
-    display: block;
-
-}
-
-.carousel-bullet:hover {
+.slide-links a:hover {
     color: #FDCC0C;
+    background-color: #af2413;
 }
-
 
 /*MEDIA QUERIES*/
   @media screen and (max-width: 600px) {
+    header {
+        flex-flow: column wrap;
+    }
+
     .hero {
         flex-wrap: wrap;
         gap: 10px;
