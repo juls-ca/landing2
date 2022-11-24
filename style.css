@@ -63,7 +63,8 @@ li a:hover::after {
     gap: 20px;
 }
 .hero-left {
-    display: block;
+    display: flex;
+    flex-direction: column;
     border: 2px solid black;
     text-align: right;
 }
@@ -72,7 +73,6 @@ li a:hover::after {
     font-size: 100px;
     color: #006B3D;
     line-height: 0.8;
-    flex-wrap: wrap;
 }
 .hero-left h2 {
     color: #000083;
@@ -81,18 +81,19 @@ li a:hover::after {
     border-radius: 50px;
     width: 500px;
     flex: 0 1 auto;
-    overflow:auto;
+    overflow: auto;
 }
 
 /*ABOUT SECTION*/
 .about {
     border: 2px solid blue;
-    max-height: 500px;
+    max-height: 800px;
     padding: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 .about-text {
     display: flex;
@@ -101,23 +102,23 @@ li a:hover::after {
 .about h2 {
     color: #af2413;
     font-size: 50px;
-    flex: 0 2 auto;
-
 }
 .about p {
-    max-width: 300px;
-    flex: 0 1 auto;
-
+    max-width: 400px;
 }
 
 /*ABOUT SECTION: IMAGE SLIDER*/
 .carousel {
     max-width: 400px;
+    max-height: 600px;
 }
 .carousel-inner {
     position: relative;
     overflow: hidden;
     width: 100%;
+    height: 100%;
+    border-radius: 50px;
+
 }
 
 .carousel-open:checked + .carousel-item {
@@ -133,47 +134,8 @@ li a:hover::after {
 }
 
 .carousel-item img {
-    height: auto;
-    max-width: 100%;
-}
-
-.carousel-control {
-    background: #FAFAFA;
-    border-radius: 50%;
-    color: #af2413;
-    cursor: pointer;
-    display: none;
-    font-size: 40px;
-    height: 40px;
-    line-height: 35px;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translate(0, -50%);
-    cursor: pointer;
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    text-align: center;
-    width: 40px;
-    z-index: 10;
-}
-
-.carousel-control.prev {
-    left: 2%;
-}
-
-.carousel-control.next {
-    right: 2%;
-}
-
-.carousel-control:hover {
-    background: #FAFAFA;
-    color: #FDCC0C;
-}
-
-#carousel-1:checked ~ .control-1,
-#carousel-2:checked ~ .control-2,
-#carousel-3:checked ~ .control-3 {
-    display: block;
+    height: 100%;
+    width: 100%;
 }
 
 .carousel-indicators {
@@ -181,15 +143,17 @@ li a:hover::after {
     margin: 0;
     padding: 0;
     position: absolute;
-    bottom: 2%;
+    bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
-    z-index: 10;
+    z-index: 1; /*stacks bullets on top of img*/
+
 }
 
 .carousel-indicators li {
     display: inline-block;
+
 }
 
 .carousel-bullet {
@@ -197,13 +161,13 @@ li a:hover::after {
     cursor: pointer;
     font-size: 35px;
     display: block;
+
 }
 
-#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+.carousel-bullet:hover {
     color: #FDCC0C;
 }
+
 
 /*MEDIA QUERIES*/
   @media screen and (max-width: 600px) {
