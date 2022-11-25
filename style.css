@@ -57,8 +57,8 @@ li a:hover::after {
 .hero {
     border: 2px solid black;
     width: 100%;
-    height: calc(100vh - 80px);
-    padding: 2%;
+    height: 800px;
+    padding: 2vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,9 +67,7 @@ li a:hover::after {
 .hero-left {
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
     text-align: right;
-    position: relative;
 }
 .hero-left h1 {
     font-family: 'Coiny', cursive;
@@ -79,34 +77,32 @@ li a:hover::after {
 }
 .hero-left h2 {
     color: #000083;
+    font-size: 1.5rem;
 }
 .hero img {
     border-radius: 50px;
     width: 500px;
     flex: 0 1 auto;
     overflow: auto;
-    position: relative;
 }
 
 /*ABOUT SECTION*/
 .about {
     border: 2px solid blue;
-    max-height: 800px;
-    padding: 2%;
+    padding: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 }
 .about-text {
     display: flex;
-    flex-direction: column;
-    position: relative;
+    flex-direction: column; /*header and p stack vertical*/
 }
 .about h2 {
     color: #af2413;
-    font-size: 50px;
+    font-size: 3rem;
 }
 .about p {
     max-width: 400px;
@@ -141,7 +137,6 @@ li a:hover::after {
     transform-origin: center center;
     transform: scale(1);
     transition: transform 0.5s;
-    position: relative;
 }
 .slides img {
     object-fit: cover;
@@ -161,13 +156,41 @@ li a:hover::after {
     background: #FDCC0C;
     text-decoration: none;
     border-radius: 50%;
-    position: relative;
 }
 .slide-links a:hover {
     color: #FDCC0C;
     background-color: #af2413;
 }
 
+/*WORK PROJECTS SECTION*/
+.work {
+    border: 2px solid #006B3D;
+    display: flex;
+    height: 500px;
+    padding: 2vw;
+    align-items: center;
+    flex-flow: column wrap;
+    
+}
+
+.work h2 {
+    color: #000083;
+    font-size: 3rem;
+}
+
+/*CONTACT SECTION*/
+.contact {
+    border: 2px solid #af2413;
+    display: flex;
+    height: 500px;
+    padding: 2vw;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+form {
+    background-color: #FDCC0C;
+}
 /*MEDIA QUERIES*/
   @media screen and (max-width: 600px) {
     header {
