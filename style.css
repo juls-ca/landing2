@@ -181,15 +181,65 @@ li a:hover::after {
 /*CONTACT SECTION*/
 .contact {
     border: 2px solid #af2413;
+    height: fit-content;
+}
+
+.contact-container {
     display: flex;
-    height: 500px;
-    padding: 2vw;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-flow: column wrap;
+    gap: 10px;
+    padding: 50px;
+}
+
+.contact-container h2 {
+    color: #006B3D;
+    font-size: 2.5rem;
 }
 
 form {
+    display: flex;
+    flex-flow: column wrap;
+    border-radius: 20%;
+    padding: 40px 50px;
+    background-color: #eeeeee;
+}
+form label {
+    background-color: #eeeeee;
+    padding-top: 10px;
+    font-weight: bold;
+}
+form #name, #email, textarea {
+    background-color: #FAFAFA;
+    border-width: 1px;
+    border-color: #eeeeee;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 300px;
+}
+form input::placeholder, textarea::placeholder {
+    font-size: smaller;
+}
+
+form textarea {
+    min-height: 100px;
+}
+#submit {
+    width: 100px;
+    align-self: center;
+    padding: 5px 10px;
+    margin-top: 10px;
+    background-color: #006B3D;
+    border: 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 10px;
+}
+#submit:hover {
     background-color: #FDCC0C;
+    color: #FFFFFF;
+
 }
 /*MEDIA QUERIES*/
   @media screen and (max-width: 600px) {
